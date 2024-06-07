@@ -11,28 +11,27 @@ variable "waypoint_application" {
 variable "waypoint_add_on_definition" {
   type        = string
   description = "Name of the Waypoint add-on definition."
+  default     = ""
 }
 
-variable "waypoint_add_on_instance" {
+variable "waypoint_add_on" {
   type        = string
   description = "Name of the Waypoint add-on instance."
-
+  default     = ""
 }
 
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group"
   default     = "AIHUB-TFE-POC"
+  validation {
+    condition     = can(regex("^AIHUB-[A-Za-z]{3}-[A-Za-z]{3}$", var.resource_group_name))
+    error_message = "The resource group name must be in the format AIHUB-XXX-YYY"
+  }
 }
 
-variable "application_insights_connection_string" {
-  description = "Connection string for Application Insights"
+variable "storage_account_name" {
+  description = "Name of the storage account"
   type        = string
-  sensitive   = true
-}
-
-variable "application_insights_key" {
-  description = "Application Insights Key"
-  type        = string
-  sensitive   = true
+  default     = "poccdktfstorage"
 }
