@@ -3,8 +3,8 @@ mock_provider "tfe" {
   mock_data "tfe_outputs" {
     defaults = {
       values = {
-        application_insights_connection_string = "mocked-app-insights-connection-string"
-        application_insights_key               = "mocked-app-insights-key"
+        app_insights_connection_string = "mocked-app-insights-connection-string"
+        app_insights_key               = "mocked-app-insights-key"
       }
     }
   }

@@ -31,7 +31,7 @@ resource "azurerm_linux_function_app" "example" {
   service_plan_id = azurerm_service_plan.example.id
 
   site_config {
-    application_insights_connection_string = data.tfe_outputs.root_application.values.application_insights_connection_string
-    application_insights_key               = data.tfe_outputs.root_application.values.application_insights_key
+    application_insights_connection_string = data.tfe_outputs.root_application.values.app_insights_connection_string
+    application_insights_key               = data.tfe_outputs.root_application.values.app_insights_key
   }
 }
