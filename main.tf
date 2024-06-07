@@ -22,7 +22,7 @@ resource "azurerm_service_plan" "example" {
 }
 
 resource "azurerm_linux_function_app" "example" {
-  name                       = "example-linux-function-app"
+  name                       = "azf-poc-${var.waypoint_application}"
   resource_group_name        = data.azurerm_resource_group.existing.name
   location                   = data.azurerm_resource_group.existing.location
   storage_account_name       = data.azurerm_storage_account.azf_storage_account.name
